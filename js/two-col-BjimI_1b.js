@@ -1,0 +1,1 @@
+import{d as e,e as r}from"./index-DrqTzKeg.js";import{N as t}from"./Grid-CqLZMRUq.js";const d=e({setup(a,{slots:o}){return()=>r(t,{cols:"36 1:12 1024:36 1600:36",xGap:24},{default:()=>[o?.default?.()]})}});export{d as T};
