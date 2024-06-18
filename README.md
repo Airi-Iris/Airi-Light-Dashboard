@@ -24,15 +24,15 @@ npm run build
 
 ## 截图
 
-![image-1](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/5873a6ce-e992-474c-a541-e514cddfc92c)
-![image-2](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/68df8cfc-f293-4804-99e7-56bb5e7cfe99)
-![image-3](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/af3ab318-48c1-4aea-a759-dff43c17ae3a)
-![image-4](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/29ea238b-9c59-413f-8fff-6ffefeded915)
-![image-5](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/8238bbf5-eb82-4beb-8d46-dc628aaf4499)
-![image-6](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/4075604d-b126-4bf4-acd0-6366f927195f)
-![image-7](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/7803b509-67b5-424a-bc40-adf878bfd39a)
-![image-8](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/0d0063ba-d69e-4bff-b42c-2e37e832e869)
-![image-9](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/822bb7b8-1924-447c-a69f-6e692ba3d41a)
+![image-1](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/a78a06f0-d37e-479a-895c-5f9032b13be2)
+![image-2](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/802014fc-b94c-4f41-9add-a1264b66d87a)
+![image-3](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/345d7811-33ad-4898-a1b5-5ec79a2830b9)
+![image-4](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/c7541376-b6bf-4473-b626-dcde930142a9)
+![image-5](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/3a895b77-e3b9-4ce3-9f0d-9d7f71747eb0)
+![image-6](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/8e67d3ad-0f79-4ec9-a960-6559fa304ef1)
+![image-7](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/c88ac042-3938-43ac-af61-dc047d0e9af7)
+![image-8](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/232d0c67-27dc-45c4-92eb-70afe80a3408)
+![image-9](https://github.com/hanazono-kaede/Airi-Light-Dashboard/assets/60839179/04984a9e-4dd7-4e0b-9554-3bbd411df5d9)
 
 ## 相关仓库
 
