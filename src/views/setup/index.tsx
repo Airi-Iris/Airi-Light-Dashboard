@@ -1,5 +1,4 @@
 import {
-  NButton,
   NCard,
   NDynamicTags,
   NForm,
@@ -21,6 +20,8 @@ import { RESTManager } from "../../utils/rest";
 import styles from "./index.module.css";
 import type { UserModel } from "../../models/user";
 import type { PropType } from "vue";
+import { VanillaButton } from "~/components/button/rounded-button";
+import { clsxm } from "~/utils/helper";
 
 const useDefaultConfigs = () => inject<any>("configs");
 export default defineComponent({
@@ -45,7 +46,10 @@ export default defineComponent({
       step.value > tab ? "finish" : step.value < tab ? "wait" : "process";
     return () => (
       <div class={styles.full}>
-        <NCard title="初始化" class="modal-card sm form-card m-auto">
+        <NCard
+          title="初始化"
+          class="modal-card sm form-card m-auto card-shadow"
+        >
           <NSteps
             onUpdateCurrent={(next) => {
               if (next < step.value) {
@@ -59,23 +63,27 @@ export default defineComponent({
               status={step.value > 0 ? "finish" : "process"}
               title="(๑•̀ㅂ•́)و✧"
               description="让我们开始吧"
+              class={"text-sm"}
             />
 
             <NStep
               status={getStatus(1)}
               title="站点设置"
               description="先设置一下站点相关配置吧"
+              class={"text-sm"}
             />
 
             <NStep
               status={getStatus(2)}
               title="主人信息"
               description="请告诉你的名字"
+              class={"text-sm"}
             />
             <NStep
               status={getStatus(3)}
               title="(๑•̀ㅂ•́)و✧"
               description="一切就绪了"
+              class={"text-sm"}
             />
           </NSteps>
 
@@ -137,18 +145,18 @@ const Step0 = defineComponent({
     };
     return () => (
       <div class="flex justify-center space-x-4 text-center">
-        <NButton type="default" round onClick={handleUploadAndRestore}>
-          还原备份
-        </NButton>
-        <NButton
-          type="primary"
-          round
+        <VanillaButton variant="secondary" onClick={handleUploadAndRestore}>
+          <span class={"mx-2"}>还原备份</span>
+        </VanillaButton>
+        <VanillaButton
+          variant="primary"
+          class="rounded-full shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-none transitio dark:ring-white/10 dark:hover:ring-white/20"
           onClick={() => {
             props.onNext();
           }}
         >
-          开始
-        </NButton>
+          <span class={"mx-2"}> 开始 </span>
+        </VanillaButton>
       </div>
     );
   }
@@ -195,6 +203,7 @@ const Step1 = defineComponent({
           <NInput
             value={title.value}
             onUpdateValue={(e) => void (title.value = e)}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -202,23 +211,52 @@ const Step1 = defineComponent({
           <NInput
             value={description.value}
             onUpdateValue={(e) => void (description.value = e)}
+            class={"rounded-lg"}
           />
         </NFormItem>
         <NFormItem label="关键字">
           <NDynamicTags
             value={keywords.value}
             onUpdateValue={(e) => void (keywords.value = e)}
-          />
+          >
+            {{
+              trigger(e) {
+                const AddIcon = defineComponent({
+                  setup() {
+                    return () => (
+                      <button onClick={e.activate}>
+                        <div
+                          class={clsxm(
+                            "border-foreground-400/80 w-fit items-center justify-center !text-[#2080f0] inline-flex space-x-1",
+                            "transition-colors ease-in-out duration-300 hover:!text-[#4098fc]"
+                          )}
+                        >
+                          <i class="icon-[mingcute--add-line] size-4" />
+                          <span>添加</span>
+                        </div>
+                      </button>
+                    );
+                  }
+                });
+                return <AddIcon />;
+              }
+            }}
+          </NDynamicTags>
         </NFormItem>
 
         <NFormItem label="前端地址">
-          <NInput value={url.webUrl} onInput={(e) => void (url.webUrl = e)} />
+          <NInput
+            value={url.webUrl}
+            onInput={(e) => void (url.webUrl = e)}
+            class={"rounded-lg"}
+          />
         </NFormItem>
 
         <NFormItem label="API 地址">
           <NInput
             value={url.serverUrl}
             onInput={(e) => void (url.serverUrl = e)}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -226,21 +264,26 @@ const Step1 = defineComponent({
           <NInput
             value={url.adminUrl}
             onInput={(e) => void (url.adminUrl = e)}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
         <NFormItem label="Gateway 地址">
-          <NInput value={url.wsUrl} onInput={(e) => void (url.wsUrl = e)} />
+          <NInput
+            value={url.wsUrl}
+            onInput={(e) => void (url.wsUrl = e)}
+            class={"rounded-lg"}
+          />
         </NFormItem>
         <NSpace justify="end">
-          <NButton
+          <VanillaButton
             onClick={handleNext}
-            round
-            type="primary"
+            variant="primary"
+            class="rounded-full shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-none transitio dark:ring-white/10 dark:hover:ring-white/20"
             disabled={!title.value || !description.value}
           >
-            下一步
-          </NButton>
+            <span class={"mx-2"}>下一步</span>
+          </VanillaButton>
         </NSpace>
       </NForm>
     );
@@ -279,6 +322,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.username = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -288,6 +332,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.name = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -297,6 +342,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.mail = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -307,6 +353,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.password = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -317,6 +364,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               repassword.value = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -326,6 +374,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.url = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
         <NFormItem label="头像">
@@ -334,6 +383,7 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.avatar = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
 
@@ -343,10 +393,11 @@ const Step2 = defineComponent({
             onUpdateValue={(e) => {
               user.introduce = e;
             }}
+            class={"rounded-lg"}
           />
         </NFormItem>
         <NSpace justify="end">
-          <NButton
+          <VanillaButton
             disabled={
               !user.username ||
               !user.mail ||
@@ -354,11 +405,11 @@ const Step2 = defineComponent({
               !repassword.value
             }
             onClick={handleNext}
-            round
-            type="primary"
+            variant="primary"
+            class="rounded-full shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-none transitio dark:ring-white/10 dark:hover:ring-white/20"
           >
-            下一步
-          </NButton>
+            <span class={"mx-2"}>下一步</span>
+          </VanillaButton>
         </NSpace>
       </NForm>
     );
@@ -371,9 +422,9 @@ const Step3 = defineComponent({
     return () => (
       <NSpace class="text-center" vertical>
         <span class="text-base">你已经完成了所有的步骤，干得漂亮。</span>
-        <NButton
-          type="primary"
-          round
+        <VanillaButton
+          variant="primary"
+          class="rounded-full shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-none transitio dark:ring-white/10 dark:hover:ring-white/20"
           onClick={() => {
             localStorage.setItem("to-setting", "true");
             showConfetti();
@@ -382,8 +433,8 @@ const Step3 = defineComponent({
             }, 200);
           }}
         >
-          LINK START
-        </NButton>
+          <span class={"mx-2"}> LINK START </span>
+        </VanillaButton>
       </NSpace>
     );
   }

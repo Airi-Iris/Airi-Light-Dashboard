@@ -228,7 +228,7 @@ export const LoginView = defineComponent({
             </div>
           </div>
           <footer class="absolute rounded-tl-lg bottom-0 right-0 text-[0.9rem] font-normal pt-[2px] pb-[1px] px-[5px] text-white bg-[#282828] text-center hidden sm:block">
-            &copy; {new Date().getFullYear() + " "} Future-Tech Lab
+            &copy; {`${new Date().getFullYear()} `} Future-Tech Lab
             时ICP备140422号-12
           </footer>
         </>
