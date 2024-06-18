@@ -2,6 +2,8 @@
 
 这是一个基于 [MX Space Admin](https://github.com/mx-space/mx-admin) 的个人魔改项目，将管理面板的页面风格修改成 [Shiro](https://github.com/innei/Shiro) 轻管理面板风格，以符合个人使用习惯。感谢 [@Innei](https://github.com/Innei) 大佬和 [Mix Space](https://github.com/mx-space) 社区的各位贡献者的贡献和开源
 
+面版预览，前往[Airi Light Dashboard](https://shared.kanodayo.net)
+
 ## 构建
 
 - 获取项目代码
