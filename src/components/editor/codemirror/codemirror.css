@@ -1,0 +1,28 @@
+.cm-editor {
+  @apply bg-transparent;
+
+  & .cm-gutters {
+    @apply bg-transparent;
+  }
+
+  & {
+    @apply h-full;
+  }
+
+  .cm-editor {
+    .cm-gutters,
+    .cm-activeLineGutter,
+    .cm-activeLine {
+      @apply transition-colors duration-500;
+    }
+  }
+
+  &.cm-focused {
+    @apply !outline-none;
+  }
+
+  & .cm-gutters,
+  & .cm-gutter {
+    @apply !min-w-[3rem];
+  }
+}

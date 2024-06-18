@@ -1,0 +1,16 @@
+.tab-user {
+  @apply !m-auto !max-w-[800px];
+  & .avatar {
+    @apply relative;
+    @apply flex items-center justify-center;
+  }
+}
+
+.settings {
+  h4 {
+    @apply mb-2 mt-0;
+  }
+  p {
+    @apply mb-4 mt-0;
+  }
+}

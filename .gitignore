@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+bundle-analyze
+stats.html
+.env.development
+.eslintcache
+
+
+/src/views/dev
+g.d.ts

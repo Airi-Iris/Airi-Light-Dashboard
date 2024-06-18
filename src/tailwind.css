@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .border-border {
+    @apply border-zinc-900/10 dark:border-zinc-700;
+  }
+}
+
+@layer components {
+  .modal-card {
+    @apply !w-[60rem] !max-w-[90vw];
+
+    &.sm {
+      @apply !w-[40rem];
+    }
+
+    &.xs {
+      @apply !w-[30rem];
+    }
+  }
+}

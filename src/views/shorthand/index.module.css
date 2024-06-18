@@ -1,0 +1,6 @@
+.timeline-grid {
+  @apply grid;
+
+  grid-template-columns: auto 50px;
+  grid-gap: 0.5rem;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    />
+    <script type="module">
+      import favicon from "./favicon.png";
+
+      const link = document.createElement("link");
+      link.rel = "icon";
+      link.href = favicon;
+      document.head.appendChild(link);
+    </script>
+    <title>Initializing ...</title>
+    <script>
+      window.injectData = {};
+      window.version = "N/A";
+      window.pageSource = "self";
+    </script>
+    <!-- ENV INJECT -->
+    <!-- Airi LIGHT DASHBOARD VERSION INJECT -->
+    <!-- injectable script -->
+  </head>
+
+  <body>
+    <div id="app" data-theme="true"></div>
+    <noscript>
+      <strong
+        >We're sorry but Light Dashboard doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
+      >
+      <strong>
+        It may be a network problem that caused the failure to load the JS file.
+      </strong>
+    </noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

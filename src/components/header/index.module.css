@@ -1,0 +1,198 @@
+:global(:root) {
+  --sidebar-width: 250px;
+  --sidebar-collapse-width: 50px;
+  --sidebar-transition-duration: 0.5s;
+}
+
+.root {
+  --w: var(--sidebar-width);
+  --duration: var(--sidebar-transition-duration);
+
+  & .item-title {
+    @apply max-w-[var(--w)] truncate transition-all;
+
+    transition-duration: var(--duration);
+  }
+}
+
+.root.collapse {
+  --w: var(--sidebar-collapse-width);
+}
+
+.root.collapse {
+  & .has-child {
+    @apply pl-0;
+  }
+
+  & .sidebar {
+    & .item {
+      @apply pl-0;
+    }
+
+    & .active,
+    & .expand,
+    & .item:hover {
+      border-radius: 0 !important;
+    }
+  }
+}
+
+.root.collapsed,
+.root.collapsing {
+  & .item-title {
+    @apply max-w-0 overflow-hidden opacity-0;
+  }
+
+  & .sidebar .items {
+    @apply px-0;
+  }
+
+  & .header-title,
+  & .sidebar-username {
+    @apply max-w-0 opacity-0;
+  }
+}
+
+.root.collapsed {
+  & .header-title,
+  & .sidebar-username {
+    @apply hidden;
+  }
+}
+
+.root.expanding {
+  & .sidebar-username {
+    @apply delay-[50];
+  }
+}
+
+.root.expanded,
+.root.expanding {
+  & .header-title {
+    @apply opacity-100;
+  }
+}
+
+.header-title {
+  @apply max-w-[var(--w)] overflow-clip truncate py-6 transition-all duration-[var(--duration)];
+}
+
+.collapse-button {
+  @apply absolute bottom-0 right-8 top-0 text-base;
+
+  transition: right 0.5s;
+
+  & .collapse-icon {
+    @apply transition-transform;
+
+    transition-duration: var(--duration);
+  }
+}
+
+.toggle-color-btn {
+  @apply absolute bottom-0 left-8 top-0 flex items-center text-base;
+
+  transition:
+    left 0.5s,
+    opacity 0.5s;
+}
+
+.root.collapse {
+  & .collapse-button {
+    @apply absolute left-0 right-0 m-auto;
+    @apply flex w-full items-center justify-center py-6;
+
+    & .collapse-icon {
+      @apply rotate-180 transform;
+    }
+  }
+
+  & .toggle-color-btn {
+    @apply -left-10 opacity-0;
+  }
+}
+
+.root {
+  & .sidebar {
+    width: var(--w);
+    transition: width 0.5s;
+
+    @apply flex flex-col;
+    @apply bg-gray-100;
+    @apply fixed left-0 top-0 z-10 overflow-hidden text-white;
+
+    height: 100vh;
+    height: -webkit-fill-available;
+  }
+
+  & .items {
+    transition: padding var(--duration);
+
+    @apply pl-4;
+  }
+
+  & .active,
+  & .expand {
+    background: theme("colors.pri.default");
+    border-radius: 24px 0 0 24px;
+  }
+
+  & .item {
+    transition: all var(--duration);
+
+    @apply pl-4;
+
+    @screen phone {
+      & {
+        @apply pl-0;
+      }
+    }
+  }
+
+  & .item:hover {
+    background: theme("colors.pri.shallow");
+    border-radius: 24px 0 0 24px;
+  }
+
+  & .has-child {
+    transition: max-height 0.5s;
+  }
+
+  & .sidebar {
+    background: linear-gradient(
+      to bottom,
+      theme("colors.pri.default"),
+      theme("colors.pri.shallow")
+    );
+  }
+
+  & .menu {
+    @apply flex-grow;
+
+    @apply bg-transparent text-white;
+
+    @screen phone {
+      & {
+        @apply overflow-auto;
+      }
+    }
+  }
+}
+
+:global(html.dark) {
+  & .root {
+    & .sidebar {
+      @apply bg-gray-700;
+
+      filter: brightness(0.8);
+    }
+  }
+}
+
+.sidebar-footer {
+  @apply my-4 flex h-20 w-[var(--w)] flex-shrink-0 items-center justify-center transition-all duration-[var(--duration)];
+}
+
+.sidebar-username {
+  @apply max-w-[var(--w)] truncate pl-12 transition-all duration-[var(--duration)];
+}
