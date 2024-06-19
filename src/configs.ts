@@ -1,3 +1,3 @@
 export const configs = {
-  title: window.injectData.TITLE || "独角兽的小窝"
+  title: window.injectData.TITLE || "Airi Light Dashboard"
 };

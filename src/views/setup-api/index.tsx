@@ -1,5 +1,6 @@
 import { NButton, NCard, NForm, NFormItem, NSelect, NSwitch } from "naive-ui";
 import { defineComponent } from "vue";
+import { VanillaButton } from "~/components/button/rounded-button";
 
 const storeApiUrlKey = "mx-admin:setup-api:url";
 const storeGatewayUrlKey = "mx-admin:setup-api:gateway";
@@ -130,15 +131,19 @@ export default defineComponent({
             </NFormItem>
 
             <div class="space-x-2 text-center">
-              <NButton onClick={handleLocalDev} round>
-                本地调试
-              </NButton>
-              <NButton onClick={handleReset} round>
-                重置
-              </NButton>
-              <NButton onClick={handleOk} round type="primary">
-                确定
-              </NButton>
+              <VanillaButton variant="secondary" onClick={handleLocalDev}>
+                <span class={"mx-2"}>本地调试</span>
+              </VanillaButton>
+              <VanillaButton variant="secondary" onClick={handleReset}>
+                <span class={"mx-2"}>重置</span>
+              </VanillaButton>
+              <VanillaButton
+                variant="primary"
+                onClick={handleOk}
+                class="rounded-full shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur-none transitio dark:ring-white/10 dark:hover:ring-white/20"
+              >
+                <span class={"mx-2"}>确定</span>
+              </VanillaButton>
             </div>
           </NForm>
         </NCard>
