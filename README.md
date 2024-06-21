@@ -9,7 +9,7 @@
 - 获取项目代码
 
 ```bash
-git clone --single-branch -b master https://github.com/hanazono-kaede/Airi-Light-Dashboard.git
+git clone --single-branch -b main https://github.com/hanazono-kaede/Airi-Light-Dashboard.git
 ```
 
 - 安装依赖
